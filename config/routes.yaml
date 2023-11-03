@@ -1,3 +1,8 @@
-controllers:
-    resource: ../src/Controller/
-    type: attribute
+# config/routes.yaml
+homepage:
+    path: /
+    controller: App\Controller\HomeController::index
+# config/routes.yaml
+client_prenom:
+    path: /client/prenom/{prenom}
+    controller: App\Controller\ClientController::info
