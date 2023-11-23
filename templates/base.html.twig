@@ -1,0 +1,65 @@
+{# templates/base.html.twig #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}Mon Site{% endblock %}</title>
+
+    {# Liens vers les fichiers CSS de Bootstrap #}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-TM5l3Jig0zB2YTfGt51m1txl1zEIQC1fA5PFLo15l5oM/CpMDElBsKCKMlV9U8DKK" crossorigin="anonymous">
+
+    {# Styles CSS personnalisés pour la barre de menu #}
+ <style>
+    body {
+        padding-top: 60px; /* Augmentez la hauteur de la barre de menu fixe */
+    }
+
+    nav {
+        background: #000000;
+        overflow: hidden;
+    }
+
+    nav a {
+        float: left;
+        text-decoration: none;
+        color: #ffffff;
+        padding: 15px 10px; /* Ajustez les marges intérieures pour plus d'espace */
+        font-family: sans-serif;
+        font-size: 13px;
+        transition: .5s;
+    }
+
+    nav a:hover {
+        background: #f43c80;
+    }
+</style>
+
+
+
+    {# Ajoutez ici d'autres fichiers CSS personnalisés si nécessaire #}
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+
+<nav>
+            <a href="">Accueil</a>
+            <a href=""><test</a>
+            <a href="">Test</a>
+            <a href="">Test</a>
+        </nav>
+
+<div class="container mt-5">
+    {% block body %}{% endblock %}
+</div>
+
+{# Liens vers les fichiers JavaScript de Bootstrap #}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-6Q3GToKdAyW4xL8eaJK6/Ls3L6R2FmIkAPK4K7aRvIV2Lw5Ycgu2PI2yj3xiDcH" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-GLhlTQ8iUNnTFOomqZqKsacVVXURLI5wL+sl5a9bZXYM5C8dYc3Pnso9bBUHRrP" crossorigin="anonymous"></script>
+
+{# Ajoutez ici d'autres fichiers JavaScript personnalisés si nécessaire #}
+{% block javascripts %}{% endblock %}
+
+</body>
+</html>
