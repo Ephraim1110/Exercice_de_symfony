@@ -9,3 +9,6 @@ client_prenom:
 image_home:
     path: /image/home
     controller: App\Controller\ImageController::home
+image_affiche:
+    path: /data/Images/{reference}
+    controller:  App\Controller\ImageController::affiche
