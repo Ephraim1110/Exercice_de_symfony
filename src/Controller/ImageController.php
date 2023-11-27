@@ -43,5 +43,20 @@ class ImageController extends AbstractController
 
         return $response;
     }
+    
+        public function menu(): Response
+        {
+            $directory = $this->getParameter('kernel.project_dir') . '/data/Images';
+            $files = scandir($directory);
+
+            $images = array_filter($files, function ($file) use ($directory) {
+                return !is_dir($directory . '/' . $file);
+            });
+
+            return $this->render('image/menu.html.twig', [
+                'images' => $images,
+            ]);
+    
+}
 }
 
