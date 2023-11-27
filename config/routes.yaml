@@ -6,3 +6,9 @@ homepage:
 client_prenom:
     path: /client/prenom/{prenom}
     controller: App\Controller\ClientController::info
+image_home:
+    path: /image/home
+    controller: App\Controller\ImageController::home
+image_affiche:
+    path: /data/Images/{reference}
+    controller:  App\Controller\ImageController::affiche

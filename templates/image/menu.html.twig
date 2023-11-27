@@ -1,0 +1,4 @@
+{# templates/image/menu.html.twig #}
+{% for image in images %}
+    <a href="{{ path('image_affiche', {'reference': image}) }}">{{ image }}</a>
+{% endfor %}

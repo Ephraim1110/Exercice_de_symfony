@@ -1,0 +1,106 @@
+{# templates/base.html.twig #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}Mon Site{% endblock %}</title>
+
+    {# Bootstrap CSS Link #}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-TM5l3Jig0zB2YTfGt51m1txl1zEIQC1fA5PFLo15l5oM/CpMDElBsKCKMlV9U8DKK" crossorigin="anonymous">
+
+    {# Custom CSS Styles #}
+    <style>
+
+
+        body {
+            padding-top: 0px; /* Increase fixed menu bar height */
+            font-family: 'Arial', sans-serif;
+            background: #f4f4f4; /* Light grey background */
+            color: #333; /* Dark text for readability */
+        }
+
+        nav {
+            background: #007bff; /* Bootstrap primary color */
+            overflow: hidden;
+            height:200px;
+        }
+
+        nav a {
+            float: left;
+            text-decoration: none;
+            color: white;
+            padding: 20px 15px; /* Increased inner padding for more space */
+            font-size: 16px; /* Larger font size */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        nav a:hover {
+            background-color: #0056b3; /* Darker shade for hover effect */
+        }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color:; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    padding: 10px; /* Padding autour du texte */
+    border: none; /* Pas de bordure */
+    cursor: pointer; /* Style du curseur */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: ; /* Couleur de fond des éléments déroulants */
+    min-width: 160px; /* Largeur minimale */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Ombre portée */
+    z-index: 1; /* Assure que le menu est au-dessus des autres éléments */
+}
+
+.dropdown-content a {
+    color: black; /* Couleur du texte */
+    padding: 12px 16px; /* Padding */
+    text-decoration: none; /* Pas de soulignement */
+    display: block; /* Affichage en bloc */
+}
+
+.dropdown-content a:hover {background-color: #ddd;} /* Couleur au survol */
+
+.dropdown:hover .dropdown-content {display: block;} /* Afficher le contenu au survol */
+   
+    </style>
+
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+
+    <nav>
+        <a href="">Accueil</a>
+        <a href="">Page 1</a>
+ <div class="dropdown">
+        <button class="dropbtn">Images
+         <div class="dropdown-content">
+            {{ render(controller('App\\Controller\\ImageController::menu')) }}
+        </div>
+        </button>
+       
+    </div>
+
+    </nav>
+
+    <div class="container mt-5">
+        {% block body %}{% endblock %}
+    </div>
+
+    {# Bootstrap JavaScript Files #}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-6Q3GToKdAyW4xL8eaJK6/Ls3L6R2FmIkAPK4K7aRvIV2Lw5Ycgu2PI2yj3xiDcH" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-GLhlTQ8iUNnTFOomqZqKsacVVXURLI5wL+sl5a9bZXYM5C8dYc3Pnso9bBUHRrP" crossorigin="anonymous"></script>
+
+    {% block javascripts %}{% endblock %}
+
+</body>
+</html>
