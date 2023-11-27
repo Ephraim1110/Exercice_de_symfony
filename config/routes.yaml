@@ -6,6 +6,9 @@ homepage:
 client_prenom:
     path: /client/prenom/{prenom}
     controller: App\Controller\ClientController::info
+    options: 
+        startHour: 15
+        endHour: 16
 image_home:
     path: /image/home
     controller: App\Controller\ImageController::home
