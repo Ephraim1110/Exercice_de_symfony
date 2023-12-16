@@ -46,3 +46,15 @@ security_page:
 account_confirmation:
     path: /confirmation
     controller: App\Controller\RegistrationController::confirmation
+# config/routes.yaml
+app_formulaires:
+    path: /formulaires
+    controller: 'App\Controller\FormulairesController::index'
+handle_inscription:
+    path: /handle_inscription
+    methods: POST
+    controller: 'App\Controller\FormulairesController::handleInscription'
+confirmation1:
+    path: /confirmation1
+    controller: 'App\Controller\FormulairesController::confirmation'
+
