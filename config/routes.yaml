@@ -6,9 +6,55 @@ homepage:
 client_prenom:
     path: /client/prenom/{prenom}
     controller: App\Controller\ClientController::info
+    options: 
+        startHour: 15
+        endHour: 16
 image_home:
     path: /image/home
     controller: App\Controller\ImageController::home
 image_affiche:
     path: /data/Images/{reference}
     controller:  App\Controller\ImageController::affiche
+app_register:
+    path: /register
+    controller: App\Controller\RegistrationController::register
+    methods: ['GET', 'POST']
+
+login:
+    path: /login
+    controller: 'App\Controller\SecurityController::login'
+    methods: ['GET', 'POST']
+
+logout:
+    path: /logout
+    controller: 'App\Controller\SecurityController::logout'
+    methods: ['GET']
+
+register:
+    path: /register
+    controller: 'App\Controller\RegistrationController::register'
+    methods: ['GET', 'POST']
+
+connexion:
+    path: /connexion
+    controller: App\Controller\SecurityController::connexion
+
+security_page:
+    path: '/security'
+    controller: 'App\Controller\SecurityController::securityPage'
+    methods: ['GET']
+account_confirmation:
+    path: /confirmation
+    controller: App\Controller\RegistrationController::confirmation
+# config/routes.yaml
+app_formulaires:
+    path: /formulaires
+    controller: 'App\Controller\FormulairesController::index'
+handle_inscription:
+    path: /handle_inscription
+    methods: POST
+    controller: 'App\Controller\FormulairesController::handleInscription'
+confirmation1:
+    path: /confirmation1
+    controller: 'App\Controller\FormulairesController::confirmation'
+

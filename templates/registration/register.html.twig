@@ -1,0 +1,12 @@
+{# templates/registration/register.html.twig #}
+
+
+{% block body %}
+    <h1>Créer un compte</h1>
+
+    {{ form_start(form) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.password) }}
+    <button type="submit">Créer le compte</button>
+    {{ form_end(form) }}
+{% endblock %}
